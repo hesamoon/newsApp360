@@ -50,8 +50,6 @@ class HomeFragment: Fragment(R.layout.fragment_home), NewsListInterface {
         }
     }
 
-    var test = ""
-
     private fun setRecyclerViewData(item: List<PostModel>) {
         recycler_view.layoutManager =
             LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
