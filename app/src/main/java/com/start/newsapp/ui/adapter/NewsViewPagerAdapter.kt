@@ -2,9 +2,9 @@ package com.start.newsapp.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.start.newsapp.ui.fragment.news.news_fragments.EuropeNewsFragment
-import com.start.newsapp.ui.fragment.news.news_fragments.IranNewsFragment
-import com.start.newsapp.ui.fragment.news.news_fragments.KharejiNewsFragment
+import com.start.newsapp.ui.fragment.news.news_fragments.LatestNewsFragment
+import com.start.newsapp.ui.fragment.news.news_fragments.DomesticNewsFragment
+import com.start.newsapp.ui.fragment.news.news_fragments.ForeignNewsFragment
 
 class NewsViewPagerAdapter(fm: Fragment): FragmentStateAdapter(fm) {
 
@@ -14,10 +14,10 @@ class NewsViewPagerAdapter(fm: Fragment): FragmentStateAdapter(fm) {
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0 -> IranNewsFragment()
-            1 -> KharejiNewsFragment()
-            2 -> EuropeNewsFragment()
-            else -> IranNewsFragment()
+            0 -> DomesticNewsFragment()
+            1 -> ForeignNewsFragment()
+            2 -> LatestNewsFragment()
+            else -> DomesticNewsFragment()
         }
     }
 }

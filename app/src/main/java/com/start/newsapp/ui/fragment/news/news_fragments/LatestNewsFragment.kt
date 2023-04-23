@@ -1,4 +1,4 @@
-package com.start.newsapp.ui.fragment.home
+package com.start.newsapp.ui.fragment.news.news_fragments
 
 import android.os.Bundle
 import android.view.View
@@ -14,55 +14,55 @@ import com.start.newsapp.network.RetrofitObject
 import com.start.newsapp.ui.adapter.NewsListAdapter
 import com.start.newsapp.ui.fragment.NewsDetailFragment
 import com.start.newsapp.ui.listener.NewsListInterface
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_latest_news.*
 import retrofit2.HttpException
 import java.io.IOException
 
-class HomeFragment: Fragment(R.layout.fragment_home), NewsListInterface {
+class LatestNewsFragment: Fragment(R.layout.fragment_latest_news), NewsListInterface {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         lifecycleScope.launchWhenCreated {
-            progress_bar.visibility = View.VISIBLE
+            progress_bar_latest_news.visibility = View.VISIBLE
 
-            val response = try{
+            val response = try {
                 RetrofitObject.newsApiObject.getFootballNewsPosts("news-new")
 
             } catch (ioError: IOException){
-                progress_bar.visibility = View.GONE
+                progress_bar_latest_news.visibility = View.GONE
                 Toast.makeText(context, ioError.toString(), Toast.LENGTH_SHORT).show()
                 return@launchWhenCreated
 
             } catch (httpError: HttpException){
-                progress_bar.visibility = View.GONE
+                progress_bar_latest_news.visibility = View.GONE
                 Toast.makeText(context, httpError.toString(), Toast.LENGTH_SHORT).show()
                 return@launchWhenCreated
 
             }
-            progress_bar.visibility = View.GONE
+            progress_bar_latest_news.visibility = View.GONE
             if(response.isSuccessful && response.body() != null)
-                setRecyclerViewData(response.body()!![0].getFootballPostModel())
+                setRecyclerViewData(response.body()!![4].getFootballPostModel())
 
             else
                 Toast.makeText(context, response.errorBody().toString(), Toast.LENGTH_SHORT).show()
-
         }
     }
 
-    private fun setRecyclerViewData(item: List<PostModel>) {
-        recycler_view.layoutManager =
+    private fun setRecyclerViewData(item: List<PostModel>){
+        recycler_view_latest_news.layoutManager =
             LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
 
-        recycler_view.adapter = NewsListAdapter(
+        recycler_view_latest_news.adapter = NewsListAdapter(
             item,
-            this@HomeFragment
+            this@LatestNewsFragment
         )
+
     }
 
     override fun onNewsItemClicked(news_item: PostModel) {
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, NewsDetailFragment.getNewsDetailFragment(news_item))
+            .replace(R.id.fragment_container_latest_news, NewsDetailFragment.getNewsDetailFragment(news_item))
             .addToBackStack(null)
             .commit()
     }

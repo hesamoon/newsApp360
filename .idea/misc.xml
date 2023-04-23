@@ -8,10 +8,13 @@
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.1345" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/activity_main_bottom_navigation.xml" value="0.22" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/activity_news_list.xml" value="0.21" />
+        <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_domestic_news.xml" value="0.20416666666666666" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_europe_news.xml" value="0.20416666666666666" />
+        <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_foreign_news.xml" value="0.20416666666666666" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_home.xml" value="0.203125" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_iran_news.xml" value="0.20416666666666666" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_kharehi_news.xml" value="0.20416666666666666" />
+        <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_latest_news.xml" value="0.20416666666666666" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.20416666666666666" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_news_detail.xml" value="0.203125" />
         <entry key="..\:/KotlinP/Apps-2023/kotlin_1402/NewsApp/app/src/main/res/layout/fragment_profile.xml" value="0.153125" />

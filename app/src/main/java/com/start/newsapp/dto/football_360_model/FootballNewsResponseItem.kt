@@ -21,12 +21,12 @@ data class FootballNewsResponseItem(
 fun FootballNewsResponseItem.getFootballPostModel(): List<PostModel>{
     return posts.map {
         PostModel(
-            id = it.post.code,
-            title = it.post.title,
-            body = it.post.sub_title,
-            cover = it.post.primary_media,
-            author = it.post.author.full_name,
-            createdAt = it.post.created_at.toString()
+            id =   if(it.post.code != null) it.post.code else 0,
+            title = if(it.post.title != null) it.post.title else "",
+            body = if(it.post.sub_title != null) it.post.sub_title else "",
+            cover = if(it.post.primary_media != null) it.post.primary_media else "",
+            author = if(it.post.author.full_name != null) it.post.author.full_name else "",
+            createdAt = if(it.post.created_at != null) it.post.created_at.toString() else ""
         )
     }
 }

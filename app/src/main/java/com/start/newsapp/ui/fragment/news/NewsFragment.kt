@@ -17,9 +17,9 @@ class NewsFragment: Fragment(R.layout.fragment_news) {
 
         TabLayoutMediator(tab_layout, view_pager){ tab, position ->
             when(position){
-                0 -> tab.text = "اخبار ایران"
+                0 -> tab.text = "اخبار داخلی"
                 1 -> tab.text = "اخبار خارجی"
-                2 -> tab.text = "اخبار اروپایی"
+                2 -> tab.text = "آخرین خبرها"
             }
         }.attach()
     }
